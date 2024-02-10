@@ -1,0 +1,23 @@
+.button{
+    margin-top: 5px;
+}
+.titolo{
+    text-align: center;
+    
+}
+.bi-controller{
+    color:blue;
+}
+
+.bi-emoji-smile{
+    color: orangered;
+}
+
+.box{
+    display: flex;
+    margin-top: 5px;
+}
+
+input{
+    border: none;
+}
