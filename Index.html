@@ -10,7 +10,9 @@
   </head>
   <body>
     <div class="titolo">
+      <h3>Il tuo punteggio: <span id="pointPlayer"></span></h3>
       <h1>Sasso, Carta, Forbici <i class="bi bi-controller"></i></h1>
+      <h3>Punteggio del Computer: <span id="pointPc"></span></h3>
     </div>
     <h2 id="saluto"></h2>
     <p>Scegli tra questi 3:</p>
@@ -31,6 +33,7 @@
     <button id="conferma" onclick="risultato()">Conferma</button>
     <br>
     <button class="button" onclick="window.location.reload()";>Restart</button>
+    <button id="continua"  onclick="continua()"> Continua Partita</button>
     <script src="script.js"></script>
   </body>
 </html>

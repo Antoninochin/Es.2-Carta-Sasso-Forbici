@@ -1,4 +1,6 @@
 let person = window.prompt('Ciao Inserisci il tuo nome');
+let pointPlayer;
+let pointPc;
 
  if(person == null){
     person = prompt('Per favore inserisci il tuo nome')
@@ -41,48 +43,61 @@ function risultato(){
     document.getElementById('scelta1').style.display = 'none';
     document.getElementById('scelta2').style.display = 'none';
     document.getElementById('scelta3').style.display = 'none';
+    document.getElementById('continua').style.display = 'block';
     let p = document.querySelector('p');
     p.setAttribute('id', 'scegliere');
     document.getElementById('scegliere').style.display = 'none';
     let sceltaPc = ['sasso', 'carta', 'forbici'].sort(() => Math.random() - 0.5);
-    console.log(sceltaPc[0])
     if(sceltaPlayer == 'carta' && sceltaPc[0] == 'sasso'){
+        pointPlayer = document.getElementById('pointPlayer').innerHTML = 1;
         document.getElementById('saluto').innerHTML = `Hai Vinto ${person}!!, tutta fortuna!`;
         document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPc[0] == 'carta' && sceltaPlayer == 'sasso'){
+            pointPc = document.getElementById('pointPc').innerHTML =1;
             document.getElementById('saluto').innerHTML = `Purtroppo hai perso ${person}, la prossima volta sarai più fortunato!`;
             document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPlayer == 'forbici' && sceltaPc[0] == 'carta'){
+            pointPlayer = document.getElementById('pointPlayer').innerHTML = 1;
             document.getElementById('saluto').innerHTML = `Hai Vinto ${person}!!, tutta fortuna!`;
             document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPc[0] == 'forbici' && sceltaPlayer == 'carta'){
+            pointPc = document.getElementById('pointPc').innerHTML = 1;
             document.getElementById('saluto').innerHTML = `Purtroppo hai perso ${person}, la prossima volta sarai più fortunato!`;
             document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPlayer == 'sasso' && sceltaPc[0] == 'forbici'){
+            pointPlayer = document.getElementById('pointPlayer').innerHTML = 1;
             document.getElementById('saluto').innerHTML = `Hai Vinto ${person}!!, tutta fortuna!`;
             document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPc[0] == 'sasso' && sceltaPlayer == 'forbici'){
+            pointPc = document.getElementById('pointPc').innerHTML = 1;
             document.getElementById('saluto').innerHTML = `Purtroppo hai perso ${person}, la prossima volta sarai più fortunato!`;
             document.getElementById('risultato').innerHTML = `Io ho scelto ${sceltaPc[0]}, tu invece ${sceltaPlayer}.`;
         }else if(sceltaPlayer == sceltaPc || sceltaPc[0] == sceltaPlayer){
-            document.getElementById('saluto').style.display = 'none';
-            document.getElementById('risultato').innerHTML = 'Abbiamo pareggiato, bella partita!';
+            document.getElementById('risultato').innerHTML = `${person} scegli di nuovo`;
+            document.getElementById('saluto').innerHTML = `Abbiamo pareggiato, bella partita!`;
+            document.getElementById('sasso').style.display = 'block';
+            document.getElementById('carta').style.display = 'block';
+            document.getElementById('forbici').style.display = 'block';
+            document.getElementById('conferma').style.display = 'block';
+            document.getElementById('scelta1').style.display = 'block';
+            document.getElementById('scelta2').style.display = 'block';
+            document.getElementById('scelta3').style.display = 'block';
         }else if(sceltaPlayer == undefined){
             document.getElementById('saluto').innerHTML = `${person} scegli qualcosa.`;
-            window.replace(
-            document.getElementById('sasso').style.display = 'block',
-            document.getElementById('carta').style.display = 'block',
-            document.getElementById('forbici').style.display = 'block',
-            document.getElementById('conferma').style.display = 'block',
-            document.getElementById('scelta1').style.display = 'block',
-            document.getElementById('scelta2').style.display = 'block',
-            document.getElementById('scelta3').style.display = 'block',
-            )
-            return document.getElementById('saluto').innetHTMl;
+            document.getElementById('sasso').style.display = 'block';
+            document.getElementById('carta').style.display = 'block';
+            document.getElementById('forbici').style.display = 'block';
+            document.getElementById('conferma').style.display = 'block';
+            document.getElementById('scelta1').style.display = 'block';
+            document.getElementById('scelta2').style.display = 'block';
+            document.getElementById('scelta3').style.display = 'block';
+            document.getElementById('saluto').innetHTMl;
         }
+        console.log(pointPlayer, pointPc)
     
     console.log(sceltaPlayer)
 }
+
     /*if(sceltaPlayer == 'sasso'){
         sceltaPc = 'carta'; 
     } else if(sceltaPlayer == 'carta'){

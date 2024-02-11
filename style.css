@@ -2,7 +2,8 @@
     margin-top: 5px;
 }
 .titolo{
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
     
 }
 .bi-controller{
@@ -20,4 +21,9 @@
 
 input{
     border: none;
+}
+
+#continua{
+    display: none;
+    margin-top: 5px;
 }
